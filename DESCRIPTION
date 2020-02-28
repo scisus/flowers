@@ -1,11 +1,10 @@
 Package: flowers
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Lodgepole Pine Pollination Phenology Data
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: C. Susannah Tysor
+Maintainer: C. Susannah Tysor <susannah@pobox.com>
+Description: This package contains 15 years of lodgepole pine (Pinus contorta var. latifolia) flowering phenology data. The data was collected in seed orchards in British Columbia and represents multiple BC provenances.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
