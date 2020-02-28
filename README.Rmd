@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of flowers is to provide a lodgepole pine flowering phenology data in an accessible format. This package contains 15 years of lodgepole pine (Pinus contorta var. latifolia) flowering phenology data. The data was collected in seed orchards in British Columbia and represents multiple BC provenances.
+The goal of flowers is to provide a lodgepole pine flowering phenology dataset in an accessible format. This package contains 15 years of lodgepole pine (Pinus contorta var. latifolia) flowering phenology data. The data was collected in seed orchards in British Columbia and represents multiple BC provenances.
 
 ## Installation
 
