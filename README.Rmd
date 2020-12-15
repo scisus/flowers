@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of flowers is to provide a lodgepole pine flowering phenology dataset in an accessible format. This package contains 15 years of lodgepole pine (Pinus contorta var. latifolia) phenology data for pollen shed and cone receptivity. The data was collected in seed orchards in British Columbia and represents multiple BC provenances.
+The goal of flowers is to provide a lodgepole pine flowering phenology dataset in an accessible format. This package contains 15 years of lodgepole pine (Pinus contorta var. latifolia) phenology data for pollen shed and cone receptivity. The data were collected in seed orchards in British Columbia and represents multiple BC provenances.
 
 ## Installation
 
@@ -38,25 +38,45 @@ devtools::install_github("scisus/flowers")
 ```
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+Read in phenology dataset from the package.
 
 ```{r example}
 library(flowers)
 ## basic example code
+
+phendat <- flowers::phenology
+head(phendat)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+Lodgepole pine in BC generally flowers in May and June.
 
-```{r cars}
-summary(cars)
+```{r day_of_year_plot, echo = FALSE, warning = FALSE, message = FALSE}
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+
+flowering <- phendat %>%
+    filter(Phenophase_Derived == 2) %>%
+    mutate(Year = as.factor(Year))
+
+
+ggplot(flowering, aes(x=Site, y=DoY, group=interaction(Site, Year), colour = Site)) +
+    geom_line( alpha=0.5, size=3) +
+    #geom_point(alpha=0.1) +
+    scale_colour_brewer(type="div", palette = 8) +
+    facet_wrap("Sex") +
+    theme_dark() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+    geom_abline(intercept = 122, slope = 0) +
+    geom_abline(intercept = 153, slope = 0) +
+    coord_flip() +
+    ggtitle("Day of year trees observed flowering at 7 sites", subtitle = "Lodgepole pine observed between 1997 and 2012. Vertical lines at May and June 1") 
+    
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+Data is from `r length(unique(phendat$Clone))` clones in 
+`r length(unique(phendat$Orchard))` orchards grown at 
+`r length(unique(phendat$Site))` BC seed orchard sites and observed between `r min(phendat$Year, na.rm=TRUE)` 
+and `r max(phendat$Year, na.rm=TRUE)`.
 
-You can also embed plots, for example:
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
