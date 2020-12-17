@@ -8,3 +8,5 @@ Description: This package contains 15 years of lodgepole pine (Pinus contorta va
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Depends: 
+    R (>= 2.10)
