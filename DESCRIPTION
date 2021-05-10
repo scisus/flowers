@@ -5,6 +5,7 @@ Version: 0.1.1
 Author: C. Susannah Tysor
 Maintainer: C. Susannah Tysor <susannah@pobox.com>
 Description: This package contains 15 years of lodgepole pine (Pinus contorta var. latifolia) flowering phenology data. The data was collected in seed orchards in British Columbia and represents multiple BC provenances.
+License: MIT + file LICENSE
 Encoding: UTF-8
 License: file LICENSE
 LazyData: true
