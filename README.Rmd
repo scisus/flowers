@@ -38,14 +38,17 @@ devtools::install_github("scisus/flowers")
 ```
 ## Example
 
-Read in phenology dataset from the package.
+Read in phenology data sets from the package.
 
 ```{r example}
 library(flowers)
 ## basic example code
 
-phendat <- flowers::phenology
-head(phendat)
+state <- flowers::lodgepole_phenology_state
+head(state)
+
+event <- flowers::lodgepole_phenology_event
+head(event)
 ```
 
 Lodgepole pine in BC generally flowers in May and June.
@@ -55,8 +58,8 @@ library(ggplot2)
 library(dplyr)
 library(lubridate)
 
-flowering <- phendat %>%
-    filter(Phenophase_Derived == 2) %>%
+flowering <- state %>%
+    filter(State == 2) %>%
     mutate(Year = as.factor(Year))
 
 
@@ -74,9 +77,9 @@ ggplot(flowering, aes(x=Site, y=DoY, group=interaction(Site, Year), colour = Sit
     
 ```
 
-Data is from `r length(unique(phendat$Clone))` clones in 
-`r length(unique(phendat$Orchard))` orchards grown at 
-`r length(unique(phendat$Site))` BC seed orchard sites and observed between `r min(phendat$Year, na.rm=TRUE)` 
-and `r max(phendat$Year, na.rm=TRUE)`.
+Data is from `r length(unique(state$Clone))` clones in 
+`r length(unique(state$Orchard))` orchards grown at 
+`r length(unique(state$Site))` BC seed orchard sites and observed between `r min(state$Year, na.rm=TRUE)` 
+and `r max(state$Year, na.rm=TRUE)`.
 
 
