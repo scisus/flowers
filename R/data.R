@@ -1,0 +1,44 @@
+#' @title Pinus contorta var latifolia flowering events
+#' @description This dataset contains reproductive phenological data for lodgepole pine (Pinus contorta subsp. latifolia) grown in commercial and government seed orchards at 7 sites in British Columbia, Canada (Figure 1). Data was collected between 1997 and 2012. Seed orchards measured pollen shed, cone receptivity, date cones were picked, and the weight of the cones. Not all orchards measured all variables in all years. This dataset contains only cleaned, harmonized, and formatted pollen shed and cone receptivity phenology data. It records observations as events.
+#' @format A data frame with 15707 rows and 15 variables:
+#' \describe{
+#'   \item{\code{Index}}{integer A unique identifier that discriminates between males and females of each tree in each year.}
+#'   \item{\code{State}}{integer Phenological state 1 for not yet flowering, 2 for flowering, 3 for finished flowering. 0 indicates no flowers.}
+#'   \item{\code{Year}}{integer Year of observation}
+#'   \item{\code{DoY}}{integer Day of year of observation}
+#'   \item{\code{Event_Label}}{character Phenological event label. Four types of phenological observations are recorded 1) not yet flowering 2) first flowering observation 3)last flowering observation and 4) flowering is over }
+#'   \item{\code{Event_Obs}}{integer Phenological event coded as an integer for modeling purposes}
+#'   \item{\code{Date}}{character date of observation}
+#'   \item{\code{Sex}}{character whether the observation is for pollen shed (MALE) or cone receptivity (FEMALE)}
+#'   \item{\code{Site}}{character Seed orchard site where observation was made}
+#'   \item{\code{Orchard}}{integer Orchard identifer within a seed orchard site}
+#'   \item{\code{Genotype}}{integer Genotype identifier (corresponds to "Clone" label in Seed Orchard operations)}
+#'   \item{\code{Tree}}{integer Internal identifier for an individual tree (ramet in seed orchard operations). Not unique or always assigned.}
+#'   \item{\code{X}}{character part of a grid identifier system for tree locations within orchards}
+#'   \item{\code{Y}}{integer part of a grid identifier system for tree locations within orchards}
+#'   \item{\code{Source}}{character Whether data provided by Wagner or Walsh}
+#'}
+#' @source Phenology data was originally collected for the Operational Tree Improvement Program as part of an effort to explain variation in seed production between orchards. Data was collated from multiple orchards and cleaned in order to build phenological models of pollen shed and cone receptivity in lodgepole pine. Raw data provided by Chris Walsh at Kalamalka Seed Orchards and Rita Wagner at Prince George Tree Improvement Station, both with the BC Ministry of Forests, Lands and Natural Resource Operations.  Data cleaned, harmonized, and formatted by C. Susannah Tysor while at the University of British Columbia. susannah at pobox.com
+"lodgepole_phenology_event"
+
+#' @title Pinus contorta var latifolia flowering states
+#' @description This dataset contains reproductive phenological data for lodgepole pine (Pinus contorta subsp. latifolia) grown in commercial and government seed orchards at 7 sites in British Columbia, Canada (Figure 1). Data was collected between 1997 and 2012. Seed orchards measured pollen shed, cone receptivity, date cones were picked, and the weight of the cones. Not all orchards measured all variables in all years. This dataset contains only cleaned, harmonized, and formatted pollen shed and cone receptivity phenology data. It records observations as states and also contains pre-harmonization coding in Phenophase_Recorded column.
+#' @format A data frame with 29058 rows and 14 variables:
+#' \describe{
+#'   \item{\code{Index}}{integer A unique identifier that discriminates between males and females of each tree in each year.}
+#'   \item{\code{DoY}}{integer Day of year of observation}
+#'   \item{\code{Date}}{character date of observation}
+#'   \item{\code{Phenophase_Recorded}}{character pre-harmonization state coding (from original data sheets)}
+#'   \item{\code{State}}{integer harmonized phenological state coding. 1 for not yet flowering, 2 for flowering, 3 for finished flowering. 0 indicates no flowers.}
+#'   \item{\code{Sex}}{character whether the observation is for pollen shed (MALE) or cone receptivity (FEMALE)}
+#'   \item{\code{Year}}{integer Year of observation}
+#'   \item{\code{Site}}{character Seed orchard site where observation was made}
+#'   \item{\code{Orchard}}{integer Orchard identifer within a seed orchard site}
+#'   \item{\code{Genotype}}{integer Genotype identifier (corresponds to "Clone" label in Seed Orchard operations)}
+#'   \item{\code{Tree}}{integer Internal identifier for an individual tree (ramet in seed orchard operations). Not unique or always assigned.}
+#'   \item{\code{X}}{character part of a grid identifier system for tree locations within orchards}
+#'   \item{\code{Y}}{integer part of a grid identifier system for tree locations within orchards}
+#'   \item{\code{Source}}{character Whether data provided by Wagner or Walsh}
+#'}
+#' @source Phenology data was originally collected for the Operational Tree Improvement Program as part of an effort to explain variation in seed production between orchards. Data was collated from multiple orchards and cleaned in order to build phenological models of pollen shed and cone receptivity in lodgepole pine. Raw data provided by Chris Walsh at Kalamalka Seed Orchards and Rita Wagner at Prince George Tree Improvement Station, both with the BC Ministry of Forests, Lands and Natural Resource Operations.  Data cleaned, harmonized, and formatted by C. Susannah Tysor while at the University of British Columbia. susannah at pobox.com
+"lodgepole_phenology_state"
