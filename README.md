@@ -48,7 +48,7 @@ head(state)
 #> 4   343 155 1997-06-04                   -     3 FEMALE 1997 PGTIS     220
 #> 5   343 157 1997-06-06                   -     3 FEMALE 1997 PGTIS     220
 #> 6   343 159 1997-06-08                   -     3 FEMALE 1997 PGTIS     220
-#>   Clone Tree X  Y      Source
+#>   Genotype Tree X  Y      Source
 #> 1   980   28 D 47 Rita Wagner
 #> 2   980   28 D 47 Rita Wagner
 #> 3   980   28 D 47 Rita Wagner
@@ -65,7 +65,7 @@ head(event)
 #> 4     1     3 2006 128   past_flowering         4 2006-05-08 FEMALE Kalamalka
 #> 5     2     1 2006 124 before_flowering         1 2006-05-04 FEMALE Kalamalka
 #> 6     2     2 2006 125  first_flowering         2 2006-05-05 FEMALE Kalamalka
-#>   Orchard Clone Tree X  Y      Source
+#>   Orchard Genotype Tree X  Y      Source
 #> 1     230  1460   NA N 18 Chris Walsh
 #> 2     230  1460   NA N 18 Chris Walsh
 #> 3     230  1460   NA N 18 Chris Walsh
